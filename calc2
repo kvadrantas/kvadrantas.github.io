@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer loan calc example</title>
+</head>
+
+<body>
+    <!-- <h1>Example page on how to use Customer loan calc on page</h1> -->
+    <!-- Here begins customer loan calculator -->
+    <div id="consumerLoanPartners_tm"></div>
+    <consumer-loan></consumer-loan>
+    
+    <script>
+        listboxFiles = [
+            'https://www.seb.lt/sites/default/files/calc/consumer-loan-partners/js/embed.js'
+        ];
+
+        listboxFiles.forEach(file => {
+            setTimeout(() => {
+                let homeLoanEmbed = document.createElement("script")
+                homeLoanEmbed.src = `${file}?` + new Date().getTime()
+                document.getElementById("consumerLoanPartners_tm").appendChild(homeLoanEmbed)                            
+            }, 100);
+        });
+    </script>
+    
+    <!-- Here ends customer loan calculator -->
+</body>
+<script>
+    // Below parameters serves only as an example. The real values of these parameters are in Drupal (production) as part of calc integration script.
+    // In addition parameters are different based on calculator purpose or page, where it is used.
+    drupalParamsCL = {
+        purpose: "consumer-loan",
+        drupalEditableContractFeeTooltipText: {
+            "-CS-contract-fee-tooltip": {
+                "ee-en": "",
+                "ee-et": "",
+                "ee-ru": "",
+                "lv-en": "",
+                "lv-lv": "",
+                "lv-ru": "",
+                "lt-en": "Special offer: for applications completed by 30 June 2025, we will not charge the contract fee.",
+                "lt-lt": "Specialus pasiūlymas: iki 2025 m. birželio 30 d. užpildytoms paraiškoms netaikysime sutarties mokesčio."
+            }
+        },
+        drupalEditableInterestRateTooltipText: {
+            "-CS-interest-rate-discount-tooltip": {
+                "ee-en": "",
+                "ee-et": "",
+                "ee-ru": "",
+                "lv-en": "",
+                "lv-lv": "",
+                "lv-ru": "",
+                "lt-en": "",
+                "lt-lt": ""
+            }
+        },
+        "lt": {
+            "consumer-loan": {
+                "daysInYear": 360,
+                "divisor": 30.6550,
+                "ACL": 567,
+                "shmStartingPoint": 1584,
+                "interestRate": 11,
+                "interestRateForMaxLoanAmount": 11,
+                "contributionToIncomeRatio": 40,
+                "interestRateDiscountWithProtection": 0.5,
+                "interestRateDiscount": 0,
+                "lpiLoanAmountCoefficient": 0.029,
+                "lpiMonthlyPaymentCoefficient": 0.8,
+                "lpiAdministrationFee": 0,
+                "contractFee": 1.5,
+                "contractFeeDiscount": 100,
+                "currentAccountMonthlyFee": 1,
+                "minContractFee": 50,
+                "NumPmtPerYear": 12,
+                "nim": 0,
+                "maximumLoanForSinglePerson": 20000,
+                "maximumLoanForFamily": 40000,
+                "minTotalAmount": 500,
+                "maxTotalAmount": 40000,
+                "defaultTotalAmount": 10000,
+                "minLoanTerm": 12,
+                "maxLoanTerm": 84,
+                "defaultLoanTerm": 24,
+                "minMonthlyIncome": 0,
+                "maxMonthlyIncome": 100000,
+                "minMonthlyLiabilities": 0,
+                "maxMonthlyLiabilities": 100000,
+                "householdEquivalent": [
+                    1,
+                    1.6,
+                    2,
+                    2.4,
+                    2.8,
+                    3.2,
+                    3.6,
+                    4,
+                    4.4,
+                    4.8,
+                    5.2
+                ],
+                "lpiCheckboxEnabled": true
+            },
+        }
+    }
+</script>
+</html>
