@@ -1,0 +1,17 @@
+    <div id="consumerLoanPartners_tm"></div>
+    <consumer-loan></consumer-loan>
+    
+    <script>
+        const languageParam = 'lt-lt'
+        jsFiles = [
+            'https://lsblt-wwwmng1.lnx.baltic.seb.net/sites/default/files/calc/consumer-loan-senukai/js/embed.js'
+        ];
+
+        jsFiles.forEach(file => {
+            setTimeout(() => {
+                let homeLoanEmbed = document.createElement("script")
+                homeLoanEmbed.src = `${file}?` + new Date().getTime()
+                document.getElementById("consumerLoanPartners_tm").appendChild(homeLoanEmbed)                            
+            }, 100);
+        });
+    </script>
